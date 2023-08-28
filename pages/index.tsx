@@ -7,6 +7,8 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
+import {Counter} from "@/components/counter";
+import React from "react";
 
 export default function IndexPage() {
 	return (
@@ -22,6 +24,7 @@ export default function IndexPage() {
 					<h4 className={subtitle({ class: "mt-4" })}>
 						Beautiful, fast and modern React UI library.
 					</h4>
+					<Counter />
 				</div>
 
 				<div className="flex gap-3">

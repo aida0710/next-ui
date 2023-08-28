@@ -17,9 +17,9 @@ export default function DefaultLayout({
 			</main>
 			<footer className="w-full flex items-center justify-center py-3">
 				<Link
-					isExternal
+					isExternal //新規タブで開く
 					className="flex items-center gap-1 text-current"
-					href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+					href="/docs"
 					title="nextui.org homepage"
 				>
 					<span className="text-default-600">Powered by</span>

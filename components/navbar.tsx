@@ -1,6 +1,5 @@
 import {
 	Button,
-	Kbd,
 	Link,
 	Input,
 	Navbar as NextUINavbar,
@@ -28,8 +27,11 @@ import {
 } from "@/components/icons";
 
 import { Logo } from "@/components/icons";
+import {ArrowRightIcon} from "@nextui-org/shared-icons";
+import {useState} from "react";
 
 export const Navbar = () => {
+	const [text, setText] = useState("");
 	const searchInput = (
 		<Input
 			aria-label="Search"
@@ -37,17 +39,18 @@ export const Navbar = () => {
 				inputWrapper: "bg-default-100",
 				input: "text-sm",
 			}}
-			endContent={
-				<Kbd className="hidden lg:inline-block" keys={["command"]}>
-					K
-				</Kbd>
-			}
-			labelPlacement="outside"
-			placeholder="Search..."
 			startContent={
 				<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
 			}
+			endContent={
+				<ArrowRightIcon/>
+			}
+			labelPlacement="outside"
+			placeholder="Search..."
 			type="search"
+			onSubmit={() => {
+				console.log(text);
+			}}
 		/>
 	);
 
@@ -79,7 +82,8 @@ export const Navbar = () => {
 			</NavbarContent>
 
       <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
-				<NavbarItem className="hidden sm:flex gap-2">
+		  <p>{text}</p>
+		  <NavbarItem className="hidden sm:flex gap-2">
 					<Link isExternal href={siteConfig.links.twitter}>
 						<TwitterIcon className="text-default-500" />
 					</Link>
